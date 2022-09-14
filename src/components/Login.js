@@ -1,6 +1,6 @@
 
 
-function Login ({handleNewUser}) {
+function Login ({handleNewUser, currentUser}) {
 
     function handleSubmit(e){
         e.preventDefault()
@@ -15,7 +15,8 @@ function Login ({handleNewUser}) {
                 headers: {'Content-Type': "application/json"},
                 body: JSON.stringify({
                     username: name,
-                    password: "password"
+                    password: password,
+                    image: "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
                 })
             }).then(res=>res.json()).then(data=>{
                 handleNewUser(data)
@@ -35,24 +36,37 @@ function Login ({handleNewUser}) {
                     console.log(data)
             })
         }
+
+         e.target[0].value = ''
+         e.target[1].value = ''
+        e.target[2].checked = false
     }
 
+
+
     return(
-        <form onSubmit={(e)=>handleSubmit(e)}>
-            
-            <label>Username:</label>
-                <br></br>
-                <input type="text"></input>
-                <br></br>
-                <label>Password:</label>
-                <br></br>
-                <input type="password"></input>
-                <br></br>
-                <label>New User: </label>
-                <input value="accept" type="checkbox"></input>
-                <br></br>
-                <input type="submit"></input>
-        </form>
+        <div className="login centered">
+            <div className="centered">
+                {currentUser ? <h2>Welcome {currentUser.username}!</h2> : null}
+                {currentUser ? null : <form  onSubmit={(e)=>handleSubmit(e)}>
+                    
+                    <label>Username:</label>
+                        {/* <br></br> */}
+                        <input type="text"></input>
+                        {/* <br></br> */}
+                        <label>Password:</label>
+                        {/* <br></br> */}
+                        <input type="password"></input>
+                        {/* <br></br> */}
+                        <label>New User: </label>
+                        <input value="accept" type="checkbox"></input>
+                        {/* <br></br> */}
+                        <input type="submit"></input>
+                </form>}
+                
+                {currentUser ? <button onClick={()=>handleNewUser(undefined)}>LogOut</button> : null}
+            </div>
+        </div>
     )
 }
 

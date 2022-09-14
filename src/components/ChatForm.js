@@ -4,9 +4,9 @@ function ChatForm({handleSubmit}){
 
     return(
 
-        <form onSubmit={(e)=>handleSubmit(e)}>
-                <input type="text"></input>
-                <input type="submit"></input>
+        <form className="flex" onSubmit={(e)=>handleSubmit(e)}>
+                <input className="messageBar" type="text"></input>
+                <input className="enter" type="submit"></input>
             </form>
     )
 }

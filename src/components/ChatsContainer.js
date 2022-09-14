@@ -26,6 +26,7 @@ function ChatsContainer({chats, selectChat, user, changeMakingChat, makingNewCha
         <div className="chatsContainer">
             {makingNewChat ? <NewChatForm handleNewChat={handleNewChat} /> : null}
             <button onClick={changeMakingChat}>{makingNewChat ? "Cancel" : "Make New Chat"}</button>
+            {friendSearchResults.length > 0 ? <p>Click to start a new chat!</p> : null}
             {friendSearchResults}
             {chatCardList}
         </div>

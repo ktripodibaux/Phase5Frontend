@@ -10,12 +10,15 @@ function Mainpage({user, requests}){
 
     return(
         <>
-        <h1>{user ? user.username : null}</h1>
+        {/* <h1>{user ? user.username : null}</h1> */}
             <Header user={user} requests={requests} />
+        <div className='container'>
             {/* <Login /> */}
             {/* <ChatsContainer /> */}
             {/* <Test user={user} /> */}
             <Outlet />
+        
+        </div>
         </>
     )
 }

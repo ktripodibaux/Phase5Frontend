@@ -2,7 +2,7 @@ import ChatForm from "./ChatForm"
 import Message from "./Message"
 
 
-function MessagesWindow({messages, user, handleSubmit}){
+function MessagesWindow({messages, user, handleSubmit, currentChat}){
 
     let listOfMessages = []
 
@@ -22,7 +22,7 @@ function MessagesWindow({messages, user, handleSubmit}){
                 {listOfMessages}
             {/* </ol> */}
                 {/* {listOfMessages.length > 0 ? <ChatForm handleSubmit={handleSubmit} /> : null} */}
-                <ChatForm handleSubmit={handleSubmit} />
+                {currentChat ? <ChatForm handleSubmit={handleSubmit} /> : null}
         </div>
     )
 }

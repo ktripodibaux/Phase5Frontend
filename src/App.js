@@ -10,6 +10,8 @@ import Login from './components/Login';
 import ChatPage from './components/ChatPage';
 import FriendsPage from './components/FriendsPage';
 import FriendRequestPage from './components/FriendRequestsPage';
+import PostsPage from './components/PostsPage';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
 
@@ -44,7 +46,9 @@ function App() {
   function handleNewUser(user){
     // console.log(user)
     setCurrentUser(user)
-    fetchRequests(user)
+    if(user != undefined){
+      fetchRequests(user)
+    }
   }
 
 
@@ -54,10 +58,12 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Mainpage requests={requests} user={currentUser} />}>
-          <Route path='/' element={<Login handleNewUser={handleNewUser} />} />
+          <Route path='/' element={<Login currentUser={currentUser} handleNewUser={handleNewUser} />} />
+          <Route path="/posts" element={<PostsPage user={currentUser}/>} />
           <Route path="/chat" element={<ChatPage user={currentUser} />} />
           <Route path='/friends' element={<FriendsPage user={currentUser} />} />
           <Route path="/requests" element={<FriendRequestPage removeRequest={removeRequestCard} requests={requests} user={currentUser} />} />
+          <Route path='/profile' element={<ProfilePage handleNewUser={handleNewUser} user={currentUser} />} />
           
           
         </Route>

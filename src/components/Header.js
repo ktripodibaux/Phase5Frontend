@@ -12,19 +12,24 @@ function Header({requests, user}){
     // console.log(requestNumber)
 
     return(
-        <>
+        <div className="header">
 
         {/* <h1>This is the header</h1> */}
-        <Link to="/">Home</Link>
+        <Link to="/">Login</Link>
         <br></br>
-        <Link to="/chat">chat</Link>
+        <Link to="/posts">Feed</Link>
+        <br></br>
+        <Link to="/chat">Chat</Link>
+        <br></br>
+        <h1>Simply Social</h1>
+        <Link to="/profile">{user ? `${user.username}'s Profile` : "Profile"}</Link>
         <br></br>
         <Link to="/friends">Friends</Link>
         <br></br>
         <Link to="/requests">{requestNumber > 0? `Requests:  ${requestNumber}` : "Requests"}</Link>
         <br></br>
         
-        </>
+        </div>
     )
 }
 

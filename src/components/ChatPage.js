@@ -3,6 +3,7 @@ import ChatsContainer from "./ChatsContainer";
 import Login from "./Login";
 import Message from "./Message";
 import MessagesWindow from "./MessagesWindow";
+import { Link } from "react-router-dom"
 
 
 function ChatPage({user}){
@@ -16,7 +17,10 @@ function ChatPage({user}){
 
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/users_chats/${user.id}`).then(res=>res.json()).then(data=>setChats(data))
+        if(user){
+            fetch(`http://localhost:3000/users_chats/${user.id}`).then(res=>res.json()).then(data=>setChats(data))
+
+        }
     },[])
 
     // console.log(friendsSearch)
@@ -85,13 +89,21 @@ function ChatPage({user}){
         })
     }
 
-   
+    if (!user){
+        return(
+            <>
+            <br></br>
+            <Link className="notLoggedIn" to="/"> <p>You Must be logged in to chat! Click here to login</p></Link>
+            </>
+
+        )
+    }
     
 
     return(
         <div className="chatPage">
             <ChatsContainer createNewChat={createNewChat} friendsSearch={friendsSearch} handleNewChat={handleNewChat} makingNewChat={makingNewChat} changeMakingChat={changeMakingChat} user={user} selectChat={selectChat} chats={chats} />
-            <MessagesWindow handleSubmit={handleSubmit} user={user} messages={messages} />
+            <MessagesWindow currentChat={currentChat} handleSubmit={handleSubmit} user={user} messages={messages} />
         </div>
     )
 }

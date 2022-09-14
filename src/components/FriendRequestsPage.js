@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import FriendRequestCard from "./FriendRequestCard";
+import { Link } from "react-router-dom"
 
 
 function FriendRequestPage({user, requests, removeRequest}){
@@ -18,7 +19,15 @@ function FriendRequestPage({user, requests, removeRequest}){
         }
     }
 
-   
+    if (!user){
+        return(
+            <>
+            <br></br>
+            <Link className="notLoggedIn" to="/"> <p>You Must be logged in to view or recieve friend requests! Click here to login</p></Link>
+            </>
+
+        )
+    }
 
 
 

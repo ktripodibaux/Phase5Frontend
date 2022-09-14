@@ -3,11 +3,140 @@
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
+  color: #444;
 }
 
 .app{
   text-align: center;
   color: black;
+}
+
+.searchFriend{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #00b3e6;
+  background-color: white;
+  width: 400px;
+}
+
+.searchFriend img{
+  height: 95px; 
+  /* margin-left: 10px; */
+}
+
+.header{
+  display: flex;
+  width: 85%;
+  margin: auto;
+  /* margin-right: 5px; */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header a{
+  text-decoration: none;
+  color: #00b3e6;
+  text-shadow: .5px .5px .5px #444;
+  font-size: 20px;
+}
+
+.header h1{
+  color: #00b3e6;
+  text-shadow: 1px 1px 1px #444;
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.centered{
+  display: flex;
+  margin: auto;
+}
+
+
+.displayPost{
+  text-align: center;
+  border: 1px solid #00b3e6;
+  background-color: white;
+}
+
+.commentCard{
+  margin: 5px;
+  background-color: white;
+  border: 1px solid #444;
+}
+
+.postTitle{
+  margin-bottom: 15px;
+}
+
+.postForm{
+  display: flex;
+  margin: auto;
+}
+
+.login{
+  display: flex;
+  margin-top: 10%;
+  /* width: 50%; */
+  /* flex-wrap: wrap; */
+}
+
+.button{
+  width: 20%;
+  display: flex;
+  margin: auto;
+  /* text-align: center; */
+  justify-content: center;
+}
+
+body{
+  /* background-color: #00b3e6; */
+  /* background-color: #444; */
+  background-color: #f7f7f7;
+}
+
+.messageBar{
+  width: 600px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.flex{
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+}
+
+.enter{
+  width: 200px;
+  background-color: #00b3e6;
+  border-radius: 10px;
+}
+
+.postCard{
+  border: 1px solid #00b3e6;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+}
+
+.notLoggedIn{
+  /* display: flex; */
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding-top: 50px;
+
+}
+
+.login input {
+  margin-left: 5px;
 }
 
 .chatPage{
@@ -19,7 +148,7 @@
 .chatsContainer{
   width: 20%;
   height: 100%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .messagesWindow{
@@ -28,10 +157,20 @@
   padding-right: 75px;
   display: flex;
   flex-wrap: wrap;
+  /* background-color: #444; */
 }
 
 .messagesWindow p{
   font-size: 30px;
+}
+
+.message{
+  display: flex;
+  border-radius: 20px;
+  /* background-color: #00b3e6; */
+  /* flex-wrap: wrap; */
+  margin: 5px;
+  padding: 5px;
 }
 
 /* .left, .right{
@@ -39,33 +178,103 @@
   height: 75px;
 } */
 
+.receive{
+  /* width: 1000px; */
+  width: 100%;
+  background-color: white;
+
+  border: 1px solid #00b3e6;
+  padding: 5px;
+}
+
+.send{
+  width: 100%;
+  text-align: right;
+  /* background-color: #00b3e6; */
+  background-color: white;
+  border: 1px solid #444;
+  padding: 5px;
+}
+
 .messageCard{
   display: flex;
 }
 
 .left{
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   /* margin-left: auto; */
-  min-width: 100px;
+  /* min-width: 100px; */
   align-content: flex-start;
+  flex-wrap: wrap;
 }
 .left2{
   margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.messageBox{
+  width: 100%;
 }
 
 .right{
+  border-radius: 25px;
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   margin-left: auto;
-  min-width: 100%;
+  /* min-width: 100%; */
   align-content: flex-end;
-  max-width: 70%;
+  /* max-width: 70%; */
+  width: 70%;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #00b3e6;
 }
 
 .chatsCard{
-  border: 1px solid black;
+  border: 1px solid #00b3e6;
   /* height: 50px; */
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+}
+
+.Profile{
+  display: flex;
+  height: 250px;
+  border: 1px solid #00b3e6;
+  justify-content: space-between;
+  /* padding-right: 200px; */
+  align-items: center;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.friendsPage{
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.Profile img{
+  height: 245px;
+
+}
+
+.Profile button{
+
+  height: 25px;
+}
+
+.Profile h2{
+  text-align: center;
+  font-size: 100px;
 }
 
 .chatsCard h3{

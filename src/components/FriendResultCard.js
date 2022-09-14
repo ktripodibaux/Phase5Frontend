@@ -16,9 +16,9 @@ function FriendResultCard({friend, user}){
     }
 
     return(
-        <div>
-            <h3>{friend.username}</h3>
+        <div className="searchFriend" >
             <img src={friend.image} />
+            <h3>{friend.username}</h3>
             <button onClick={handleRequest}>Send friend request</button>
 
         </div>
